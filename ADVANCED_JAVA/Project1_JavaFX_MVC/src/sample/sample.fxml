@@ -1,0 +1,79 @@
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="50"/>
+    </columnConstraints>
+    <padding>
+        <Insets topRightBottomLeft="5"/>
+    </padding>
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Name">
+    </Label>
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Street"  >
+    </Label>
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="City">
+    </Label>
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="State" >
+    </Label>
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="0" text="Zip" >
+    </Label>
+    <Label GridPane.rowIndex="5" GridPane.columnIndex="0" text="Choose One"  >
+    </Label>
+    <Label GridPane.rowIndex="6" GridPane.columnIndex="0" text="Type of Music" fx:id="typeMusic" >
+    </Label>
+    <Label GridPane.rowIndex="7" GridPane.columnIndex="0" text="Type of App" fx:id="tm">
+    </Label>
+    <Label GridPane.rowIndex="8" GridPane.columnIndex="0" text="Enter Title">
+    </Label>
+    <Label GridPane.rowIndex="9" GridPane.columnIndex="0" text="Date Purchased" >
+    </Label>
+    <Label GridPane.rowIndex="10" GridPane.columnIndex="0" text="Account Number" >
+    </Label>
+
+    <Button fx:id="submit" text="SUBMIT" GridPane.rowIndex="11" GridPane.columnIndex="0" prefWidth="Infinity" style ="-fx-background-radius:30" onAction="#dataProcess" />
+    <Button text="FINISH" GridPane.rowIndex="11" GridPane.columnIndex="1" prefWidth="Infinity" style ="-fx-background-radius:30" onAction="#exit" />
+
+
+    <TextField GridPane.rowIndex="0" GridPane.columnIndex="1"  fx:id="name" onAction="#clearField"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"  fx:id="street"/>
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1"  fx:id="city"/>
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"  fx:id="state"/>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1"  fx:id="zip"/>
+    <TextField GridPane.rowIndex="8" GridPane.columnIndex="1"  fx:id="title"/>
+    <TextField GridPane.rowIndex="9" GridPane.columnIndex="1"  fx:id="purchase_date"/>
+    <TextField GridPane.rowIndex="10" GridPane.columnIndex="1" fx:id="acc_no"/>
+
+
+    <HBox fx:id="musicType" GridPane.rowIndex ="7" GridPane.columnIndex="1" >
+        <fx:define>
+            <ToggleGroup fx:id="ToggleGroup"/>
+        </fx:define>
+        <RadioButton text="GAME" toggleGroup="$ToggleGroup" prefWidth="120"/>
+        <RadioButton text="PRODUCTIVITY" toggleGroup="$ToggleGroup" prefWidth="120"/>
+        <RadioButton text="EDUCATION" toggleGroup="$ToggleGroup" prefWidth="120"/>
+    </HBox>
+    <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" >
+
+        <CheckBox fx:id ="appButton" text="APP"  prefWidth="175" onAction="#toggleMusic" />
+        <CheckBox fx:id="musicButton" text="MUSIC" prefWidth="175" onAction="#toggleApp" />
+    </HBox>
+
+    <ComboBox fx:id="chooseOne" GridPane.rowIndex="6" GridPane.columnIndex ="1" >
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="CHOOSE ONE"/>
+                <String fx:value="My very first favorite kind of music are R n B and Pop Ballad"/>
+                <String fx:value="My very second favorite kind if music is Rock n roll and Rap"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="CHOOSE ONE"/>
+        </value>
+    </ComboBox>
+</GridPane>
