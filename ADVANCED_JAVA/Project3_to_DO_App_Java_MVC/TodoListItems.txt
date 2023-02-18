@@ -1,4 +1,0 @@
-Study	Study For Java2	Sep 28, 2022
-Walk the dog	Taking my cute dog for a nice walk	Sep 30, 2022
-Sleep Time	Going to get a goodnight sleep	Oct 1, 2022
-Waking up	Enjoying the morning sunshine 	Oct 2, 2022
